@@ -6,6 +6,7 @@ import '../components/site_footer.dart';
 import '../components/site_header.dart';
 import '../components/document_viewer.dart';
 import '../components/machine_translation_notice.dart';
+import '../constants/theme.dart';
 import '../i18n/i18n.dart';
 import '../pages/entry_list.dart';
 import '../pages/home_page.dart';
@@ -22,6 +23,15 @@ class SiteLayout extends PageLayoutBase {
     yield* super.buildHead(page);
     yield link(rel: 'icon', href: '/favicon.ico');
     yield link(rel: 'apple-touch-icon', href: '/apple-icon.png');
+    yield link(rel: 'preconnect', href: 'https://fonts.googleapis.com');
+    yield link(rel: 'preconnect', href: 'https://fonts.gstatic.com', attributes: {'crossorigin': ''});
+    yield link(rel: 'stylesheet', href: fontsUrl);
+    // Fetches a page when a link is hovered or pressed, so that moving between pages feels instant. Browsers without
+    // support ignore this and load pages normally.
+    yield script(
+      attributes: {'type': 'speculationrules'},
+      content: '{"prefetch":[{"where":{"href_matches":"/*"},"eagerness":"moderate"}]}',
+    );
   }
 
   @override

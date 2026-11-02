@@ -41,12 +41,12 @@ final siteTheme = ContentTheme(
   ],
 );
 
+const fontsUrl =
+    'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap';
+
 // Styles shared by more than one page.
 @css
 List<StyleRule> get styles => [
-  css.import(
-    'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Sans+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap',
-  ),
   css(':focus-visible').styles(
     outline: Outline(color: ContentColors.primary, style: .solid, width: OutlineWidth(2.px), offset: 2.px),
   ),
