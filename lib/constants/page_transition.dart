@@ -3,9 +3,10 @@ import 'package:jaspr/dom.dart';
 const _duration = '280ms';
 const _curve = 'cubic-bezier(0.2, 0.8, 0.2, 1)';
 
-// Page changes animate with cross-document view transitions, which need no JavaScript. Browsers without support just
-// load the next page. The header stays still while the highlight of the active tab slides to its new place, and the
-// main content fades over. View transitions have no typed API in Jaspr yet.
+// Page changes animate with view transitions, started by `web/navigation.js`. Normal page loads use cross-document
+// view transitions, which need no JavaScript. Browsers without support just change the page. The header stays still
+// while the highlight of the active tab slides to its new place, and the main content fades over. View transitions
+// have no typed API in Jaspr yet.
 @css
 List<StyleRule> get pageTransitionStyles => [
   // Without this rule no transition runs, so visitors who prefer reduced motion get a plain page load.

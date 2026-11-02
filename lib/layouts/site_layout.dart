@@ -26,12 +26,7 @@ class SiteLayout extends PageLayoutBase {
     yield link(rel: 'preconnect', href: 'https://fonts.googleapis.com');
     yield link(rel: 'preconnect', href: 'https://fonts.gstatic.com', attributes: {'crossorigin': ''});
     yield link(rel: 'stylesheet', href: fontsUrl);
-    // Fetches a page when a link is hovered or pressed, so that moving between pages feels instant. Browsers without
-    // support ignore this and load pages normally.
-    yield script(
-      attributes: {'type': 'speculationrules'},
-      content: '{"prefetch":[{"where":{"href_matches":"/*"},"eagerness":"moderate"}]}',
-    );
+    yield script(src: '/navigation.js', defer: true);
   }
 
   @override

@@ -62,6 +62,8 @@ List<StyleRule> get styles => [
     flexDirection: .column,
   ),
   css('.site-main').styles(flex: Flex(grow: 1)),
+  // navigation.js moves the focus here after a page change.
+  css('.site-main:focus').styles(raw: {'outline': 'none'}),
   css('.page').styles(
     width: 100.percent,
     maxWidth: 44.rem,
