@@ -37,3 +37,6 @@ content/blog/*.md
 !content/blog/index.md
 content/documents/*.md
 !content/documents/index.md
+
+# Wrangler
+.wrangler/

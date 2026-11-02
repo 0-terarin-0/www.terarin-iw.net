@@ -107,6 +107,12 @@ flutter_deck はこのスクリプトでビルドと R2 への配置ができま
 tool/add_flutter_deck.sh ../my_deck my-deck
 ```
 
+## デプロイ
+
+`main` に push すると、GitHub Actions が R2 から記事を取得してビルドし、Cloudflare Workers に公開します。R2 の記事だけを更新したときは、Actions の画面から `Deploy` を手動で実行します。
+
+GitHub Secrets には R2 の4項目と `CLOUDFLARE_API_TOKEN`（Workers の編集権限）が必要です。
+
 ## ライセンス
 
 コードは [MIT License](LICENSE) です。プロフィールや記事の文章、画像、ロゴはライセンスの対象外で、著作権は各権利者に帰属します。

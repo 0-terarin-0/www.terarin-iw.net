@@ -3,7 +3,7 @@ description: Personal site of Koki Teramoto (profile, blog and slides), built wi
 version: 0.0.1
 
 environment:
-  sdk: ^3.10.0
+  sdk: ^3.13.0
 
 dependencies:
   jaspr: ^0.23.5
